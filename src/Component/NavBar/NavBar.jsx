@@ -3,8 +3,9 @@ import { Container, Nav, Navbar } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import "./navBar.css"
 import { FaShoppingCart } from "react-icons/fa";
-// import { AllProductContexts } from '../AllProductContext/AllProductContext';
+import { FaUserCircle } from "react-icons/fa";
 import { StateContext } from '../../Context/Appprovider';
+import { useSelector } from 'react-redux';
 
 const NavBar = () => {
 
@@ -17,7 +18,7 @@ const NavBar = () => {
 
   const totalItemOfCart = state.userCart.length
   // console.log(totalItemOfCart);
-
+  const isLoggedIn = useSelector((state) => state.userAuth.isAuthentication)
 
   return (
     <Navbar expand="lg" className="nav-bar p-4" expanded={expanded} onToggle={setExpanded}>
@@ -39,10 +40,18 @@ const NavBar = () => {
             <Nav.Link className='fs-6 text-light' onClick={handleCloseNav}>About</Nav.Link>
             <Nav.Link className='fs-6 text-light' onClick={handleCloseNav}>Contact</Nav.Link>
             <Nav.Link className='fs-6 text-light' onClick={handleCloseNav} as={Link} to="/cart"><FaShoppingCart size={25} /></Nav.Link>
-
             <div className='item-length position-relativ'>
               <span>{totalItemOfCart}</span>
             </div>
+            {isLoggedIn === true ? (
+              <Nav.Link className='fs-6 text-light' onClick={handleCloseNav} ><FaUserCircle size={25}/> </Nav.Link>
+            ) : (
+              <Nav.Link className='fs-6 text-light' onClick={handleCloseNav} as={Link} to="/login">loggin</Nav.Link>
+
+            )}
+
+
+
 
 
           </Nav>
