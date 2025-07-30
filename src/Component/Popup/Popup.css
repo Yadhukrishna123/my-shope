@@ -1,0 +1,43 @@
+.popup {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 99;
+    /* background-color: rgb(157, 156, 155); */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.popup-content {
+    background-color: rgb(229, 189, 8);
+    /* color: #fff; */
+    width: 500px;
+    height: 300px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    transform: translateY(-100vh);
+    opacity: 0;
+    animation: slideDown 0.5s ease forwards;
+}
+
+@keyframes slideDown {
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.pop-btn{
+    padding: 3px 10px;
+    border: none;
+    background-color: rgb(252, 251, 149);
+    font-weight: 500
+}

@@ -1,0 +1,42 @@
+.sub-div{
+    width: 30% !important;
+    height: 400px;
+    margin-left: 10px;
+}
+.sub-sub{
+    margin-top: 200px;
+}
+.parenT > div:nth-child(1) {
+ background-image: url("https://img.freepik.com/free-photo/front-view-little-boy-red-t-shirt-colorful-cap-khaki-trousers-holding-box-yellow-background_179666-1318.jpg?semt=ais_hybrid&w=740");
+   background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+.parenT > div:nth-child(2) {
+  background-image: url("https://img.freepik.com/free-photo/handsome-adult-male-with-shopping-bags_23-2148316211.jpg?semt=ais_hybrid&w=740");
+   background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+.parenT > div:nth-child(3) {
+  background-image: url("https://static.vecteezy.com/system/resources/thumbnails/054/689/169/small/cheerful-young-asian-girl-looking-at-camera-celebrating-hands-holding-gadget-carrying-red-bag-of-christmas-gifts-wearing-red-christmas-blouse-santa-hat-isolated-on-orange-background-photo.jpg");
+   background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+.btns{
+    padding: 5px 13px;
+    background-color: #f9f8f8;
+    color: black;
+    font-weight:700;
+    border-radius: 4px;
+    border: none;
+}
+
+@media only screen and (max-width: 825px) {
+  .sub-div{
+   width: 40% !important;
+  }
+}
+@media only screen and (max-width: 550px) {
+  .sub-div{
+   width: 100%!important;
+  }
+}

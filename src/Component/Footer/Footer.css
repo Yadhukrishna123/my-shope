@@ -1,0 +1,9 @@
+.footer-sub{
+    width: 32%;
+   
+}
+.footer-parent{
+    /* height: 100px; */
+    margin-top: 300px;
+    background-color: rgb(189, 186, 186);
+}

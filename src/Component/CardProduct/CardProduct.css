@@ -1,0 +1,73 @@
+.cards {
+    width: 18%;
+
+}
+.buy-btn{
+    border: none;
+    border-radius: 5px;
+}
+
+@media only screen and (max-width: 1366px) {
+    .cards {
+        width: 18% !important;
+    }
+
+}
+
+@media only screen and (max-width: 1000px) {
+    .cards {
+        width: 23% !important;
+    }
+
+}
+
+@media only screen and (max-width: 730px) {
+    .cards {
+        width: 30% !important;
+    }
+
+}
+
+@media only screen and (max-width: 572px) {
+    .cards {
+        width: 43% !important;
+    }
+
+}
+
+@media only screen and (max-width: 322px) {
+    .cards {
+        width: 80% !important;
+    }
+
+}
+
+.carg-img {
+    width: 100%;
+}
+
+.rating-parent  {
+    top: -5px;
+    left: -1px;
+}
+
+.price {
+    left: 18px;
+    margin-top: -5px;
+}
+
+.pparent {
+    height: 400px;
+}
+
+.pro-title {
+    width: fit-content;
+    max-width: 7ch;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis
+}
+
+.imgg {
+    height: 200px;
+}

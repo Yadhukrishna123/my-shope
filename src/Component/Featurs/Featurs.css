@@ -1,0 +1,29 @@
+.sub-sectionss{
+    width: 25% !important;
+    
+}
+.featurs{
+    height: 100px;
+    background-color: rgb(253, 252, 252);
+}
+
+
+@media only screen and (max-width: 880px) {
+    .sub-sectionss  {
+        width: 30% !important;
+    }
+
+}
+@media only screen and (max-width: 500px) {
+    .sub-sectionss  {
+        width: 43% !important;
+       
+    }
+   
+}
+@media only screen and (max-width: 360px) {
+    .sub-sectionss  {
+        width: 100% !important;
+    }
+
+}
