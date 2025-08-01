@@ -1,7 +1,15 @@
 import React from 'react'
 import "./Home3.css"
+import { useSelector } from 'react-redux'
 
 const Home3 = () => {
+    
+    // const address = useSelector((state)=>state.userAuth.usersAddress)
+    // address.map((a)=>{
+    //     console.log(a);
+        
+    // })
+    
     return (
         <div className='hone-three-parent position-relative mt-5'>
             <div className='position-absolute home-three-sub g-3 text-white'>

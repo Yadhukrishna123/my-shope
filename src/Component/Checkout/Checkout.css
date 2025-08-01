@@ -1,0 +1,90 @@
+.checkout-parent {
+    display: flex;
+}
+
+.checkoutSession {
+    width: 70%;
+    height: 500px;
+    /* border: 1px solid black; */
+}
+
+.price-session {
+    width: 30%;
+    height: 500px;
+    /* border: 1px solid black; */
+}
+
+.create-address {
+    height: auto;
+    /* border: 1px solid rgb(186, 181, 181); */
+}
+
+.checkout-parent {
+    display: flex;
+}
+
+.checkout-image {
+    width: 25%;
+    border:none !important;
+    display: flex;
+    justify-content: center;
+   
+}
+.checkout-image img{
+    width: 50%;
+}
+
+.checkout-product-details {
+    width: 50%;
+    border:none !important;
+     display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.checkout-price {
+    width: 25%;
+    border: none !important;
+     display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.continue-button{
+    padding: 5px 20px;
+    margin-top: 10px;
+    background-color: rgb(36, 36, 253);
+    color: #fff;
+    border: none;
+}
+.price-parent{
+    margin: 5px 5px 5px 5px;
+    border: 1px solid black;
+}
+.price-of{
+    display: flex;
+}
+.platfom-fee{
+    display: flex;
+}
+.price-section-parent{
+    height: auto;
+    /* border: 100px solied rgb(200, 26, 26); */
+   
+}
+.total-Payable{
+    display: flex;
+    font-weight: 700;
+}
+
+/* @media only screen and (max-width: 542px) {
+ .checkout-parent {
+    /* display: flex; */
+    /* flex-direction: column; */
+  
+  /* .price-session{
+    width: 60% !important;
+  }
+  .checkoutSession{
+    width: 90%;
+    
+  } */

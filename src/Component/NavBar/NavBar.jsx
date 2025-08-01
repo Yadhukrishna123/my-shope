@@ -4,19 +4,20 @@ import { Link } from 'react-router-dom'
 import "./navBar.css"
 import { FaShoppingCart } from "react-icons/fa";
 import { FaUserCircle } from "react-icons/fa";
-import { StateContext } from '../../Context/Appprovider';
+// import { StateContext } from '../../Context/Appprovider';
 import { useSelector } from 'react-redux';
 
 const NavBar = () => {
 
-  const { state } = useContext(StateContext)
+  const totalProduct = useSelector((state) => state.userAuth.userCartItems)
+
   const [expanded, setExpanded] = useState(false);
 
   const handleCloseNav = () => {
     setExpanded(false)
   }
 
-  const totalItemOfCart = state.userCart.length
+  const totalItemOfCart = totalProduct.length
   // console.log(totalItemOfCart);
   const isLoggedIn = useSelector((state) => state.userAuth.isAuthentication)
 
@@ -32,7 +33,7 @@ const NavBar = () => {
 
           <Nav className="me-auto mt-1 ">
             <Nav.Link className='text-light' onClick={handleCloseNav}>Home</Nav.Link>
-            {/* <Nav.Link className='text-light' onClick={handleCloseNav}>Link</Nav.Link> */}
+            {/* <Nav.Link className='text-light' onClick={handleCloseNav} as={Link} to="/account">account</Nav.Link> */}
 
           </Nav>
           <Nav className="ms-auto">
@@ -44,7 +45,7 @@ const NavBar = () => {
               <span>{totalItemOfCart}</span>
             </div>
             {isLoggedIn === true ? (
-              <Nav.Link className='fs-6 text-light' onClick={handleCloseNav} ><FaUserCircle size={25}/> </Nav.Link>
+              <Nav.Link className='fs-6 text-light' onClick={handleCloseNav} as={Link} to="/account"><FaUserCircle size={25} /> </Nav.Link>
             ) : (
               <Nav.Link className='fs-6 text-light' onClick={handleCloseNav} as={Link} to="/login">loggin</Nav.Link>
 

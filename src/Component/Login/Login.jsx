@@ -30,17 +30,30 @@ const Login = () => {
             let res = await axios.post("http://localhost:8080/api/v1/login", {
                 email: input.email,
                 password: input.password
-            })
+            }, { withCredentials: true })
             if (res.data.success === true) {
+
                 if (res.data.isAuthenTication === true) {
-                    dispatch(userAuthSuccess({ user: res.data.user, isAuthentication: res.data.isAuthenTication }))
+
+                    dispatch(userAuthSuccess({
+                        user: res.data.user,
+                        isAuthentication: res.data.isAuthenTication,
+                        userAddress:res.data.user.addresses[0]
+
+
+                    }))
                     alert(res.data.message)
+
                     await new Promise((back) => setTimeout(back, 2000))
+
                     setLoggedIn(true)
+
                     navigate("/")
                 }
+                console.log(res)
             } else if (res.data.success === true) {
                 alert(res.data.message)
+
             }
         } catch (error) {
             alert(error.message)

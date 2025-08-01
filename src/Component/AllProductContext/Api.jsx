@@ -10,17 +10,22 @@ import Mycart from '../Mycart/Mycart'
 import SignUp from '../SignUp/SignUp'
 import Login from '../Login/Login'
 import ProtectedRoutes from '../Utils/ProtectedRoutes'
-import {Appprovider} from '../../Context/Appprovider'
+// import { Appprovider } from '../../Context/Appprovider'
 import { useSelector } from 'react-redux'
+import UserPage from '../UserPage/UserPage'
+import MyOrder from '../MyOrders/MyOrder'
+import Checkout from '../Checkout/Checkout'
+import Payment from '../Payment/Payment'
+// import UserAddress from '../UserAddress/UserAddress'
 // import NotificationMessage from '../NotificationMessage/NotificationMessage'
 
 
 const Api = () => {
 
-    const isAuthenticated = useSelector((state)=>state.userAuth.isAuthentication)
+    const isAuthenticated = useSelector((state) => state.userAuth.isAuthentication)
     return (
 
-        <Appprovider>
+        // <Appprovider>
             <AllProductContext>
                 <BrowserRouter>
                     <NavBar />
@@ -28,18 +33,18 @@ const Api = () => {
                         <Route path='/' element={<Home />} />
                         <Route path='/search' element={<SearchProduct />} />
                         <Route path='/details/:id' element={<ProductDetails />} />
-                        <Route path='/cart' element={ <ProtectedRoutes isAuthenticated={isAuthenticated}><Mycart /></ProtectedRoutes>} />
+                        <Route path='/cart' element={<ProtectedRoutes isAuthenticated={isAuthenticated}><Mycart /></ProtectedRoutes>} />
                         <Route path='/login' element={<Login />} />
                         <Route path='/signup' element={<SignUp />} />
-                         {/* <Route path='/toast' element={<NotificationMessage />} /> */}
-
-
+                        <Route path='/account/*' element={<ProtectedRoutes isAuthenticated={isAuthenticated}><UserPage /></ProtectedRoutes>} />
+                        <Route path='/checkout' element={<Checkout/>} />
+                         <Route path='/payment' element={<Payment/>} />
 
                     </Routes>
                     {/* <Footer /> */}
                 </BrowserRouter>
             </AllProductContext>
-        </Appprovider>
+        // </Appprovider>
 
     )
 }

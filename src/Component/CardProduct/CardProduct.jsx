@@ -31,9 +31,9 @@ const {dataToProductDetails} = useContext(AllProductContexts)
                              <Rating className='text-success' name="size-small" defaultValue={product.rating} size="small" readOnly  />
                             {/* <p className='position-absolute'></p> */}
                         </div>
-                        <div className='d-flex mt-2 position-relative price-parent '>
+                        <div style={{border:"none"}} className='d-flex mt-2 position-relative price-parent '>
                             <LiaRupeeSignSolid />
-                            <p className='position-absolute price'>{product.price}</p>
+                            <p  className='position-absolute price'>{product.price}</p>
 
                         </div>
 

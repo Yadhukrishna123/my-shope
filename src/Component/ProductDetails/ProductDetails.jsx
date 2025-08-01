@@ -6,20 +6,32 @@ import { AllProductContexts } from '../AllProductContext/AllProductContext';
 import { BiDollar } from "react-icons/bi";
 import CardProduct from '../CardProduct/CardProduct';
 import { Link } from 'react-router-dom';
-import { DispatchContext } from '../../Context/Appprovider';
+import { useDispatch, useSelector } from 'react-redux';
+import { userCart } from '../ReduxStore/userSlice';
+// import { DispatchContext } from '../../Context/Appprovider';
 
 const ProductDetails = () => {
 
     // let[ similarProduct, setSimilarProduct] = useState("")
+    const isLoggedIn = useSelector((state)=>state.userAuth.isAuthentication)
     const { productDetails, similarProduct, handleItemToCart } = useContext(AllProductContexts)
-
+    const dispatch  = useDispatch()
     let similarProducts = similarProduct.map((product, index) => {
         return (
             <CardProduct key={index} product={product} />
         )
     })
 
-    const { dispatch } = useContext(DispatchContext)
+    const handleAddtocart = () => {
+        if(isLoggedIn === true) {
+             dispatch(userCart({userCartItem:productDetails}))
+        }else{
+            alert("Please loge in !")
+        }
+       
+        // alert("Item moved to cart")
+    }
+    // const { dispatch } = useContext(DispatchContext)
 
     // let similarProd = productDetails.filter((item)=>item.category ===allProduct.category)
 
@@ -59,7 +71,7 @@ const ProductDetails = () => {
                         <Link to="/">
                             <button >Back</button>
                         </Link>
-                        <button onClick={() => dispatch({ type: "add_to_cart", payload: productDetails })}>Add To Cart</button>
+                        <button onClick={()=>handleAddtocart()}>Add To Cart</button>
                     </div>
                 </div>
 

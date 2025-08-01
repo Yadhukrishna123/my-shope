@@ -1,0 +1,122 @@
+.user-page-parent {
+    background-color: rgb(203, 201, 201);
+}
+
+.user-page {
+    width: 28%;
+    height: auto;
+    /* border: 1px solid black; */
+    margin-left: 5px;
+    background-color: rgb(252, 247, 247);
+}
+
+.address-page {
+    width: 69%;
+    height:auto;
+    /* border: 1px solid black; */
+    margin-left: 20px;
+     background-color: rgb(252, 247, 247);
+}
+
+.user-bio {
+    height: 100px;
+    background-color: #fff;
+
+}
+
+.u-p-img {
+    width: 15%;
+}
+
+.other-user-bio {
+    height: auto;
+    background-color: #fff;
+
+
+}
+
+.user-bios {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+
+.orders {
+    height: 100px;
+    background-color: #fff;
+    /* border-bottom: 1px solid gray; */
+}
+
+.profile-address {
+    height: auto;
+    background-color: #fff;
+    /* border-bottom: 1px solid gray; */
+
+}
+
+.payment {
+    height: auto;
+    background-color: #fff;
+    /* border-bottom: 1px solid gray; */
+}
+.text-secondary{
+    color: gray;
+}
+
+.user-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Center items horizontally */
+    width: 30%;
+    /* or 100% under media query */
+}
+
+@media (max-width: 940px) {
+    .user-page {
+        width: 100% !important;
+        align-items: center;
+        /* still center on small screens */
+    }
+
+    .profile-address {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+     .iconss{
+        display: none;
+     }
+     .logout{
+        color: red !important;
+     }
+    .payment{
+          display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .user-page-parent {
+        flex-direction: column;
+    }
+
+    .address-page {
+        width: 100% !important;
+        margin-top: 20px;
+    }
+}
+@media only screen and (max-width: 600px) {
+
+}
+@media only screen and (max-width: 938px) {
+ .address-page {
+    width: 99% !important;
+    height: auto;
+    /* border: 1px solid black; */
+   /* margin-right: -20px !important; */
+   margin-left:1px;
+}
+
+}
