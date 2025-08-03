@@ -8,26 +8,11 @@ import { TiDelete } from "react-icons/ti";
 import { Link, useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { removeProduct } from '../ReduxStore/userSlice'
+import CardProduct from '../CardProduct/CardProduct'
 // import { DispatchContext, StateContext } from '../../Context/Appprovider'
 
 const Mycart = () => {
-    //     // const { state } = useContext(StateContext)
-    //     // const {dispatch} = useContext(DispatchContext)
-    //     console.log(state.userCart);
-
-    //     const totalAmount = state.userCart.reduce((acc, price)=>acc+price.price, 0)
-    //    console.log(totalAmount);
-
-
-    // let cartProduct = state.userCart.length > 0 ? (
-    //     state.userCart.map((pro) => {
-    //         return (
-
-    //         )
-
-    //     })
-    // ) : <p className='text-center my-5'>youe cart is empty</p>
-    
+ 
     const userCartProduct = useSelector((state) => state.userAuth.userCartItems)
     console.log("userCartProduct", userCartProduct)
     const dispatch = useDispatch()
@@ -40,6 +25,7 @@ const Mycart = () => {
         navigate("/checkout")
        }
     }
+    
 
     let cartProduct = userCartProduct.length > 0 ? (
         userCartProduct.map((item) => {
@@ -65,11 +51,13 @@ const Mycart = () => {
         })
     ) : <p className='text-center my-5'>youe cart is empty</p>
 
+
+
     let totalAmount = userCartProduct.reduce((acc, price) => acc + price.price, 0)
     console.log(totalAmount)
 
     return (
-        <div className='all-parent'>
+        <div style={{height:"750px"}} className='all-parent'>
             <div className='container-p'>
                 {cartProduct}
             </div>

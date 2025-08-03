@@ -1,15 +1,12 @@
-import React from 'react'
-import { CiCirclePlus } from "react-icons/ci";
 import "./AddressManager.css"
-import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 const AddressManager = () => {
     const user = useSelector((state) => state.userAuth.user)
     console.log(user.addresses)
-    let userAddress = user.addresses.map((address) => {
+    let userAddress = user.addresses.map((address, index) => {
         return (
-            <div className='bg-light m-5 address-parent'>
+            <div key={index} className='bg-light m-5 address-parent'>
                 <div className='create-address '>
 
                     <div className='d-flex'>
@@ -19,10 +16,6 @@ const AddressManager = () => {
                     </div>
                     <div>
                         <p className='ms-2'>{`${address.address},${address.phonecity_district_town},${address.state}, near ${address.landMark}`}</p>
-
-
-
-
 
 
                         <h5 className='ms-2'>{address.pincode}</h5>

@@ -16,6 +16,11 @@ import UserPage from '../UserPage/UserPage'
 import MyOrder from '../MyOrders/MyOrder'
 import Checkout from '../Checkout/Checkout'
 import Payment from '../Payment/Payment'
+import OrderPlaced from '../OrderPlaced/OrderPlaced'
+import About from '../About/About'
+import Contact from '../ContactUs/Contact'
+import Footer from '../Footer/Footer'
+// import UserAddress from '../UserAddress/UserAddress'
 // import UserAddress from '../UserAddress/UserAddress'
 // import NotificationMessage from '../NotificationMessage/NotificationMessage'
 
@@ -26,24 +31,28 @@ const Api = () => {
     return (
 
         // <Appprovider>
-            <AllProductContext>
-                <BrowserRouter>
-                    <NavBar />
-                    <Routes>
-                        <Route path='/' element={<Home />} />
-                        <Route path='/search' element={<SearchProduct />} />
-                        <Route path='/details/:id' element={<ProductDetails />} />
-                        <Route path='/cart' element={<ProtectedRoutes isAuthenticated={isAuthenticated}><Mycart /></ProtectedRoutes>} />
-                        <Route path='/login' element={<Login />} />
-                        <Route path='/signup' element={<SignUp />} />
-                        <Route path='/account/*' element={<ProtectedRoutes isAuthenticated={isAuthenticated}><UserPage /></ProtectedRoutes>} />
-                        <Route path='/checkout' element={<Checkout/>} />
-                         <Route path='/payment' element={<Payment/>} />
+        <AllProductContext>
+            <BrowserRouter>
+                <NavBar />
+                <Routes>
+                    <Route path='/' element={<Home />} />
+                    <Route path='/search' element={<SearchProduct />} />
+                    <Route path='/details/:id' element={<ProductDetails />} />
+                    <Route path='/cart' element={<ProtectedRoutes isAuthenticated={isAuthenticated}><Mycart /></ProtectedRoutes>} />
+                    <Route path='/login' element={<Login />} />
+                    <Route path='/signup' element={<SignUp />} />
+                    <Route path='/account/:id/*' element={<ProtectedRoutes isAuthenticated={isAuthenticated}><UserPage /></ProtectedRoutes>} />
+                    <Route path='/checkout' element={<ProtectedRoutes isAuthenticated={isAuthenticated}><Checkout /></ProtectedRoutes>} />
+                    <Route path='/payment' element={<ProtectedRoutes isAuthenticated={isAuthenticated}><Payment /></ProtectedRoutes>} />
+                    <Route path='/about' element={<About/>} />
+                      <Route path='/contact' element={<Contact/>} />
+                      
+                    <Route path='/success' element={<ProtectedRoutes isAuthenticated={isAuthenticated}><OrderPlaced /></ProtectedRoutes>} />
 
-                    </Routes>
-                    {/* <Footer /> */}
-                </BrowserRouter>
-            </AllProductContext>
+                </Routes>
+               <Footer/>
+            </BrowserRouter>
+        </AllProductContext>
         // </Appprovider>
 
     )

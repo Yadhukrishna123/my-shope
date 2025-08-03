@@ -1,0 +1,16 @@
+.left-session{
+    width: 50%;
+   /* border: 1px solid black; */
+   height: 300px;
+   
+}
+.right-session{
+    width: 50%;
+     /* border: 1px solid black; */
+   height: 300px;
+}
+.right-session img{
+    height: 300px;
+    width: 85%;
+   
+}

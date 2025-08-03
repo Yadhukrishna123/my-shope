@@ -13,21 +13,24 @@ import AddressManager from '../AddressManager/AddressManager';
 import UserAddress from '../UserAddress/UserAddress';
 import { useDispatch, useSelector } from 'react-redux';
 import { userLogout } from '../ReduxStore/userSlice';
+import WishList from '../MyWishList/WishList';
 
 
 const UserPage = () => {
 
-    const user = useSelector((state)=>state.userAuth.user)
+    const user = useSelector((state) => state.userAuth.user)
+    console.log(user.addresses)
+
     const dispatch = useDispatch()
     const navigate = useNavigate()
     const handleLoggout = () => {
         dispatch(userLogout())
-        alert("Are you sure that you want to logged out")
+        alert("Successfully loged out")
         navigate("/login")
-       
+
     }
     return (
-        <div className='d-flex user-page-parent'>
+        <div  className='d-flex user-page-parent'>
             <div className='user-page row'>
                 <div className='d-flex user-bio justify-content-center align-items-center mt-3 '>
                     <div className='d-flex '>
@@ -49,7 +52,7 @@ const UserPage = () => {
                             <p className='fs-5 text-secondary'>My orders</p>
                         </div>
                         <div className='me-5'>
-                            <Link to="/account/orders">
+                            <Link to={`/account/${user._id}/orders`}>
                                 <FaArrowRight size={25} />
                             </Link>
                         </div>
@@ -61,15 +64,20 @@ const UserPage = () => {
                             <p className='ms-2 fs-5 text-secondary'>Account setting</p>
                         </div>
                         <div className='mt-2'>
-                            <Link style={{ color: "black", textDecoration: "none" }} to="/account/profile">
+                            <Link style={{ color: "black", textDecoration: "none" }}  to={`/account/${user._id}/profile`}>
                                 <p className='ms-5'>Profile information</p>
                             </Link>
-                            <Link style={{ color: "black", textDecoration: "none" }} to="/account/address_manager">
+                            <Link style={{ color: "black", textDecoration: "none" }} to={`/account/${user._id}/address_manager`}>
                                 <p className='ms-5'>Manage address</p>
                             </Link>
-                            <Link style={{ color: "black", textDecoration: "none" }} to="/account/create-address">
-                                <p  className='ms-5'>Create addres</p>
-                            </Link>
+
+                            {user.addresses && user.addresses.length === 0 && (
+                                <Link style={{ color: "black", textDecoration: "none" }} to={`/account/${user._id}/create-address`}>
+                                    <p className='ms-5'>Create Address</p>
+                                </Link>
+                            )}
+
+
 
                         </div>
                     </div>
@@ -99,16 +107,19 @@ const UserPage = () => {
                         <div >
                             <p className='ms-5'>My coupons</p>
                             <p className='ms-5'>My Notifications</p>
-                            <p className='ms-5'>My wish list</p>
+                             <Link style={{ color: "black", textDecoration: "none" }}  to={`/account/${user._id}/wish_list`}>
+                                <p className='ms-5'>My wish list</p>
+                             </Link>
+                            
                         </div>
 
                     </div>
 
                     <div className='payment'>
-                        <div  className='d-flex '>
-                            <FaPowerOff style={{cursor:"pointer"}} size={30} color='blue' className='mt-5 iconss' />
+                        <div className='d-flex '>
+                            <FaPowerOff style={{ cursor: "pointer" }} size={30} color='blue' className='mt-5 iconss' />
 
-                            <p style={{cursor:"pointer"}} className='ms-2 fs-5  mt-5 ms-5 logout' onClick={handleLoggout}>Logout</p>
+                            <p style={{ cursor: "pointer" }} className='ms-2 fs-5  mt-5 ms-5 logout' onClick={handleLoggout}>Logout</p>
                         </div>
 
 
@@ -123,6 +134,7 @@ const UserPage = () => {
                     <Route path="profile" element={<ProfileInfo />} />
                     <Route path="address_manager" element={<AddressManager />} />
                     <Route path="create-address" element={<UserAddress />} />
+                     <Route path="wish_list" element={<WishList />} />
                 </Routes>
 
             </div>

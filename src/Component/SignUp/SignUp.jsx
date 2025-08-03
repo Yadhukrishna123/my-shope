@@ -4,7 +4,7 @@ import { IoEyeOff } from "react-icons/io5";
 import { IoEye } from "react-icons/io5";
 import "./SignUp.css"
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const SignUp = () => {
 
@@ -61,7 +61,7 @@ const SignUp = () => {
 
     return (
 
-        <div className='mt-5'>
+        <div style={{height:"650px"}} className='mt-5'>
 
 
             <h2 className='text-center fw-bold '>Sign up</h2>
@@ -100,7 +100,11 @@ const SignUp = () => {
 
 
             </div>
-            <p className='text-center mt-5' >If you are already registerd ? <a className='text-primary' href="/login">Login</a></p>
+            <p className='text-center mt-5' >If you are already registerd ?
+               <Link to="/login">
+                <span className='text-primary' >Login</span>
+               </Link>
+            </p>
 
         </div>
     )

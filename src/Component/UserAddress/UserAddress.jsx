@@ -3,14 +3,15 @@ import { Button, Col, Form, Row } from 'react-bootstrap'
 import "./UserAddress.css"
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
-import {useDispatch, useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { usersAddress } from '../ReduxStore/userSlice'
 
 const UserAddress = () => {
 
-   
+
 
     const dispatch = useDispatch()
+
     const navigate = useNavigate()
     const [input, setInput] = useState({
         fullname: "",
@@ -38,18 +39,25 @@ const UserAddress = () => {
                 city_district_town: input.city,
                 state: input.state,
                 landMark: input.landmark
-            },{withCredentials:true})
+            }, { withCredentials: true })
 
             if (res.data.success) {
 
-                if(res.data.success === true){
-                    dispatch(usersAddress({address:res.data}))
-                }
-                alert(res.data.message)
+                if (res.data.success === true) {
+                    dispatch(usersAddress({
+                        address:input
+      
+                    }))
+                    alert(res.data.message)
 
-                await new Promise((resolve) => setTimeout(resolve, 2000));
-                navigate("/account/address_manager");
+                    await new Promise((resolve) => setTimeout(resolve, 2000));
+                    navigate("/account");
+                }
+
             }
+
+            console.log(res);
+
 
         } catch (error) {
             alert(error.message)

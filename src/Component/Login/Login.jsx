@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react'
 import "../SignUp/Signup.css"
 import { Button, Form } from 'react-bootstrap'
 import { IoEye, IoEyeOff } from 'react-icons/io5'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { AllProductContexts } from '../AllProductContext/AllProductContext'
 import axios from 'axios'
 import { useDispatch } from 'react-redux'
@@ -38,7 +38,7 @@ const Login = () => {
                     dispatch(userAuthSuccess({
                         user: res.data.user,
                         isAuthentication: res.data.isAuthenTication,
-                        userAddress:res.data.user.addresses[0]
+                        userAddress: res.data.user.addresses[0]
 
 
                     }))
@@ -92,7 +92,12 @@ const Login = () => {
                     </div>
                 </Form>
             </div>
-            <p className='text-center mt-5' >If you are not sign up ? <a className='text-primary' href="/signup">Sign Up</a></p>
+            <p className='text-center mt-5' >If you are not sign up ?
+
+                <Link to="/signup">
+                    <span className='text-primary' >Sign up</span>
+                </Link>
+            </p>
 
         </div>
     )

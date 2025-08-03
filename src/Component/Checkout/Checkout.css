@@ -4,19 +4,19 @@
 
 .checkoutSession {
     width: 70%;
-    height: 500px;
-    /* border: 1px solid black; */
+    height: auto !important;
+    border-right: 1px solid black;
 }
 
 .price-session {
     width: 30%;
-    height: 500px;
+    height: auto !important;
     /* border: 1px solid black; */
 }
 
 .create-address {
-    height: auto;
-    /* border: 1px solid rgb(186, 181, 181); */
+    height: auto !important;
+    border: none !important;
 }
 
 .checkout-parent {
@@ -58,7 +58,7 @@
 }
 .price-parent{
     margin: 5px 5px 5px 5px;
-    border: 1px solid black;
+    border: none !important;
 }
 .price-of{
     display: flex;

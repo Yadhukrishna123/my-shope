@@ -39,7 +39,7 @@ const ProductDetails = () => {
 
 
     return (
-        <div>
+        <div style={{height:"1100px"}}>
             <div className='product-details-container'>
                 <div className='product-details-sub'>
                     <img src={productDetails.thumbnail} alt="" />
