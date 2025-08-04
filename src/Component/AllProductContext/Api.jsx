@@ -44,13 +44,13 @@ const Api = () => {
                     <Route path='/account/:id/*' element={<ProtectedRoutes isAuthenticated={isAuthenticated}><UserPage /></ProtectedRoutes>} />
                     <Route path='/checkout' element={<ProtectedRoutes isAuthenticated={isAuthenticated}><Checkout /></ProtectedRoutes>} />
                     <Route path='/payment' element={<ProtectedRoutes isAuthenticated={isAuthenticated}><Payment /></ProtectedRoutes>} />
-                    <Route path='/about' element={<About/>} />
-                      <Route path='/contact' element={<Contact/>} />
-                      
+                    <Route path='/about' element={<About />} />
+                    <Route path='/contact' element={<Contact />} />
+
                     <Route path='/success' element={<ProtectedRoutes isAuthenticated={isAuthenticated}><OrderPlaced /></ProtectedRoutes>} />
 
                 </Routes>
-               <Footer/>
+                <Footer />
             </BrowserRouter>
         </AllProductContext>
         // </Appprovider>

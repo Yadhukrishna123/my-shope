@@ -4,11 +4,11 @@ import { Image } from 'react-bootstrap'
 import { useSelector } from 'react-redux'
 
 const MyOrder = () => {
-    const userOrders = useSelector((state) => state.userAuth.myOrders)
-    console.log(userOrders)
-   
-    return (
-          <div className="my-order-container">
+  const userOrders = useSelector((state) => state.userAuth.myOrders)
+  console.log(userOrders)
+
+  return (
+    <div className="my-order-container">
       {userOrders && userOrders.length > 0 ? (
         userOrders.map((orderGroup, indexOne) =>
           orderGroup.map((ord, indexTwo) => (
@@ -30,7 +30,7 @@ const MyOrder = () => {
       )}
     </div>
 
-    )
+  )
 }
 
 export default MyOrder

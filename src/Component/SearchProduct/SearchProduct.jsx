@@ -32,7 +32,7 @@ const SearchProduct = () => {
     }
 
     return (
-        <div style={{height:"750px"}}>
+        <div >
             <div className='text-center mt-4 position-relative'>
                 <CiSearch size={30} className='icon ' />
                 <input type="text"

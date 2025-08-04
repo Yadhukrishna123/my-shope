@@ -14,9 +14,9 @@ const ProfileInfo = () => {
 
             <div className='mt-5 profile-info-parent' >
                 <label className='fs-5'>Full name:</label>
-                <input className='w-50 m-auto' type="text" placeholder={user.fullName } readOnly />
-                    
-               
+                <input className='w-50 m-auto' type="text" placeholder={user.fullName} readOnly />
+
+
                 <label className='fs-5 '>Email:</label>
                 <input className='w-50 m-auto' type="text" placeholder={user.email} readOnly />
 

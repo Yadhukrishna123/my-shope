@@ -26,11 +26,14 @@ const UserPage = () => {
     const handleLoggout = () => {
         dispatch(userLogout())
         alert("Successfully loged out")
-        navigate("/login")
+        setTimeout(() => {
+            navigate("/login")
+            location.reload();
+        }, 2000)
 
     }
     return (
-        <div  className='d-flex user-page-parent'>
+        <div className='d-flex user-page-parent'>
             <div className='user-page row'>
                 <div className='d-flex user-bio justify-content-center align-items-center mt-3 '>
                     <div className='d-flex '>
@@ -64,7 +67,7 @@ const UserPage = () => {
                             <p className='ms-2 fs-5 text-secondary'>Account setting</p>
                         </div>
                         <div className='mt-2'>
-                            <Link style={{ color: "black", textDecoration: "none" }}  to={`/account/${user._id}/profile`}>
+                            <Link style={{ color: "black", textDecoration: "none" }} to={`/account/${user._id}/profile`}>
                                 <p className='ms-5'>Profile information</p>
                             </Link>
                             <Link style={{ color: "black", textDecoration: "none" }} to={`/account/${user._id}/address_manager`}>
@@ -107,10 +110,10 @@ const UserPage = () => {
                         <div >
                             <p className='ms-5'>My coupons</p>
                             <p className='ms-5'>My Notifications</p>
-                             <Link style={{ color: "black", textDecoration: "none" }}  to={`/account/${user._id}/wish_list`}>
+                            <Link style={{ color: "black", textDecoration: "none" }} to={`/account/${user._id}/wish_list`}>
                                 <p className='ms-5'>My wish list</p>
-                             </Link>
-                            
+                            </Link>
+
                         </div>
 
                     </div>
@@ -134,7 +137,7 @@ const UserPage = () => {
                     <Route path="profile" element={<ProfileInfo />} />
                     <Route path="address_manager" element={<AddressManager />} />
                     <Route path="create-address" element={<UserAddress />} />
-                     <Route path="wish_list" element={<WishList />} />
+                    <Route path="wish_list" element={<WishList />} />
                 </Routes>
 
             </div>

@@ -4,10 +4,10 @@ import { createSlice } from "@reduxjs/toolkit"
 const initialState = {
     user: null,
     isAuthentication: false,
-    usersAddress: [{}],
+    usersAddress: [],
     userCartItems: [],
     myOrders: [],
-    userWishList:[]
+    userWishList: []
 
 }
 
@@ -48,17 +48,17 @@ export const userAuthSlice = createSlice({
         emptyCart: (state) => {
             state.userCartItems = []
         },
-        userWishLists:(state, action) => {
-            state.userWishList = [... state.userWishList, action.payload.wishList]
+        userWishLists: (state, action) => {
+            state.userWishList = [...state.userWishList, action.payload.wishList]
         },
-        removeWishList:(state, action) => {
-              state.userWishList = state.userWishList.filter((item) => item.id !== action.payload.userId)
+        removeWishList: (state, action) => {
+            state.userWishList = state.userWishList.filter((item) => item.id !== action.payload.userId)
         }
 
     }
 })
 
 
-export const { userAuthSuccess, userLogout, usersAddress, userCart, removeProduct, myOrder, emptyCart, userWishLists , removeWishList} = userAuthSlice.actions
+export const { userAuthSuccess, userLogout, usersAddress, userCart, removeProduct, myOrder, emptyCart, userWishLists, removeWishList } = userAuthSlice.actions
 
 export default userAuthSlice.reducer

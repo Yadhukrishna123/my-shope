@@ -1,6 +1,6 @@
 .user-page-parent {
     background-color: rgb(203, 201, 201);
-    
+
 }
 
 .user-page {
@@ -13,10 +13,10 @@
 
 .address-page {
     width: 69%;
-    height:auto;
+    height: auto;
     /* border: 1px solid black; */
     margin-left: 20px;
-     background-color: rgb(252, 247, 247);
+    background-color: rgb(252, 247, 247);
 }
 
 .user-bio {
@@ -62,7 +62,8 @@
     background-color: #fff;
     /* border-bottom: 1px solid gray; */
 }
-.text-secondary{
+
+.text-secondary {
     color: gray;
 }
 
@@ -87,14 +88,17 @@
         align-items: center;
         flex-direction: column;
     }
-     .iconss{
+
+    .iconss {
         display: none;
-     }
-     .logout{
+    }
+
+    .logout {
         color: red !important;
-     }
-    .payment{
-          display: flex;
+    }
+
+    .payment {
+        display: flex;
         align-items: center;
         flex-direction: column;
     }
@@ -108,16 +112,16 @@
         margin-top: 20px;
     }
 }
-@media only screen and (max-width: 600px) {
 
-}
+@media only screen and (max-width: 600px) {}
+
 @media only screen and (max-width: 938px) {
- .address-page {
-    width: 99% !important;
-    height: auto;
-    /* border: 1px solid black; */
-   /* margin-right: -20px !important; */
-   margin-left:1px;
-}
+    .address-page {
+        width: 99% !important;
+        height: auto;
+        /* border: 1px solid black; */
+        /* margin-right: -20px !important; */
+        margin-left: 1px;
+    }
 
 }

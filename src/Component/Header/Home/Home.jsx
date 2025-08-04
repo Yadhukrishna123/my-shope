@@ -7,15 +7,19 @@ import Featurs from '../../Featurs/Featurs'
 import Home3 from '../Home3/Home3'
 import Popup from '../../Popup/Popup'
 import { Link } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
 
 const Home = () => {
-    const { allProduct, loggedIn } = useContext(AllProductContexts)
-    // console.log("allProductallProduct", allProduct)
-   
-  
+    const { allProduct, closepoPup } = useContext(AllProductContexts)
+    console.log("allProductallProduct", closepoPup)
+    const isLogedIn = useSelector((state) => state.userAuth.isAuthentication)
+
+
     return (
-        <div style={{height:"2800px"}}>
+        <div className='home-parent'>
+            {(!isLogedIn && !closepoPup) && <Popup />}
+
             <div className='hero-parent position-relative'>
 
                 <div className='position-absolute first-section mt-5'>
@@ -23,7 +27,7 @@ const Home = () => {
                     <h2>25% Off On All Products</h2>
                     <div className='buttons'>
                         <Link to="/search">
-                        <button>shope now</button>
+                            <button>shope now</button>
                         </Link>
                         <button >Find more</button>
                     </div>

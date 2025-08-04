@@ -12,6 +12,7 @@ export const AllProductContext = (props) => {
     let [productDetails, setProductDetails] = useState([])
     let [similarProduct, setSimilarProduct] = useState([])
     let [loggedIn, setLoggedIn] = useState(false)
+    let [closepoPup, setClosePupup] = useState(false)
 
 
     const allMenu = async () => {
@@ -52,6 +53,11 @@ export const AllProductContext = (props) => {
         window.scrollTo({ top: 0 });
     }
 
+    const handleClosePopup = (r) => {
+        setClosePupup(r)
+
+    }
+
 
     return (
         <AllProductContexts.Provider value={{
@@ -60,7 +66,9 @@ export const AllProductContext = (props) => {
             productDetails,
             similarProduct,
             setLoggedIn,
-            loggedIn
+            loggedIn,
+            handleClosePopup,
+            closepoPup
         }}>
             {!loading ? props.children : <Loading />}
         </AllProductContexts.Provider>

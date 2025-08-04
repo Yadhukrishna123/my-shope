@@ -20,11 +20,20 @@ const CardProduct = ({ product }) => {
     const dispatch = useDispatch()
     const wishLishedProduct = useSelector((state) => state.userAuth.userWishList)
     const wishListproduct = wishLishedProduct.find((item) => item.id === product.id)
+    const isLoggin = useSelector((state) => state.userAuth.isAuthentication)
 
 
 
     const handleWishList = (product) => {
-        dispatch((userWishLists({ wishList: product })))
+
+        if (isLoggin === true) {
+            alert("Move to wish list")
+            dispatch((userWishLists({ wishList: product })))
+
+        } else {
+            alert("Please loge in!")
+        }
+
     }
 
     return (
@@ -32,7 +41,7 @@ const CardProduct = ({ product }) => {
         <div className='row position-relative  mt-5 ms-4 cards'>
 
             <Card style={{ width: '18rem' }} >
-                {wishListproduct ? <FaHeart onClick={()=>dispatch(removeWishList({userId:product.id}))} color='red' className='position-absolute heart-icon' /> : <FaRegHeart onClick={() => handleWishList(product)} className='position-absolute heart-icon' />}
+                {wishListproduct ? <FaHeart onClick={() => dispatch(removeWishList({ userId: product.id }))} color='red' className='position-absolute heart-icon' /> : <FaRegHeart onClick={() => handleWishList(product)} className='position-absolute heart-icon' />}
 
 
                 <Card.Img variant="top" src={product.thumbnail} />

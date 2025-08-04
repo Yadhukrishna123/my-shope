@@ -1,29 +1,23 @@
-.sub-sectionss{
-    width: 25% !important;
-    
+.sub-sectionss {
+    flex: 1 1 200px;
+    max-width: 220px;
+    text-align: center;
+
 }
-.featurs{
-    height: 100px;
-    background-color: rgb(253, 252, 252);
+
+.featurs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: #fdfcfc;
+    padding: 2rem 1rem;
+    gap: 1.5rem;
 }
 
 
-@media only screen and (max-width: 880px) {
-    .sub-sectionss  {
-        width: 30% !important;
-    }
-
-}
-@media only screen and (max-width: 500px) {
-    .sub-sectionss  {
-        width: 43% !important;
-       
-    }
-   
-}
-@media only screen and (max-width: 360px) {
-    .sub-sectionss  {
-        width: 100% !important;
-    }
-
+@media (max-width: 500px) {
+  .sub-sectionss {
+    max-width: 100%;
+  }
 }

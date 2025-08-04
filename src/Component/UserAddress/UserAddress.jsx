@@ -11,12 +11,13 @@ const UserAddress = () => {
 
 
     const dispatch = useDispatch()
+    const user = useSelector((state) => state.userAuth.user)
 
     const navigate = useNavigate()
     const [input, setInput] = useState({
         fullname: "",
         phone: "",
-        pin: "",
+        pincode: "",
         city: "",
         address: "",
         state: "",
@@ -34,7 +35,7 @@ const UserAddress = () => {
             let res = await axios.post("http://localhost:8080/api/v1/address_create", {
                 fullName: input.fullname,
                 phone: input.phone,
-                pincode: input.pin,
+                pincode: input.pincode,
                 address: input.address,
                 city_district_town: input.city,
                 state: input.state,
@@ -45,13 +46,13 @@ const UserAddress = () => {
 
                 if (res.data.success === true) {
                     dispatch(usersAddress({
-                        address:input
-      
+                        address: input
+
                     }))
                     alert(res.data.message)
 
                     await new Promise((resolve) => setTimeout(resolve, 2000));
-                    navigate("/account");
+                    navigate(`account/${user._id}`);
                 }
 
             }
@@ -68,60 +69,23 @@ const UserAddress = () => {
         <div style={{ height: "auto" }} className='mt-5'>
             <h2 className='text-center'>Create Addres</h2>
 
+            <div className='text-center mt-5'>
+                <form action="" onSubmit={handleSubmit}>
+                    <input type="text" className='w-75 p-2' placeholder='Full Name' onChange={handleInput} name="fullname" />
+                    <input type="text" className='w-75 p-2 mt-3' placeholder='Phone' onChange={handleInput} name="phone" />
 
-            <Form className='mt-5' onSubmit={handleSubmit}>
-                <Row className="mb-3 d-flex justify-content-center align-items-center">
-                    <Form.Group as={Col} md="4" >
-                        <Form.Label>First name:</Form.Label>
-                        <Form.Control className='rounded shadow border-dark' type="text" placeholder="First name" onChange={handleInput} name="fullname" />
-                        <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
-                    </Form.Group>
-                    <Form.Group as={Col} md="4" >
-                        <Form.Label>Phone:</Form.Label>
-                        <Form.Control className='rounded shadow border-dark' type="text" placeholder="10 digit phone" onChange={handleInput} name="phone" />
-                        <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
-                    </Form.Group>
-                </Row>
-                <Row className="mb-3 d-flex justify-content-center align-items-center">
-                    <Form.Group as={Col} md="4" >
-                        <Form.Label>Pin:</Form.Label>
-                        <Form.Control className='rounded shadow border-dark' type="text" placeholder="State" onChange={handleInput} name="pin" />
-                        <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
-                    </Form.Group>
-                    <Form.Group as={Col} md="4" >
-                        <Form.Label>City/District/town:</Form.Label>
-                        <Form.Control className='rounded shadow border-dark' type="text" placeholder="City/District/town" onChange={handleInput} name="city" />
-                        <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
-                    </Form.Group>
-                </Row>
-                <Row className="mb-3 d-flex justify-content-center align-items-center">
+                    <input type="text" className='w-75 p-2 mt-3' placeholder='Pincode' onChange={handleInput} name="pincode" />
+                    <input type="text" className='w-75 p-2 mt-3' placeholder='City/District/town' onChange={handleInput} name="city" />
 
+                    <input type="text" className='w-75 p-4 mt-3' placeholder='Address' onChange={handleInput} name="address" />
 
-                    <Form.Group as={Col} md="6" >
-                        <Form.Label>Address :</Form.Label>
-                        <Form.Control className="p-4 border rounded shadow border-dark w-100" as="textarea" placeholder='Address' onChange={handleInput} name="address" />
-                        <Form.Control.Feedback type="valid">Looking good </Form.Control.Feedback>
+                    <input type="text" className='w-75 p-2 mt-3' placeholder='State' onChange={handleInput} name="state" />
+                    <input type="text" className='w-75 p-2 mt-3' placeholder='Land mark' onChange={handleInput} name="landmark" />
 
-                    </Form.Group>
-                </Row>
-                <Row className="mb-3 d-flex justify-content-center align-items-center">
-                    <Form.Group as={Col} md="4" >
-                        <Form.Label>State:</Form.Label>
-                        <Form.Control className='rounded shadow border-dark' type="text" placeholder="State" onChange={handleInput} name="state" />
-                        <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
-                    </Form.Group>
-                    <Form.Group as={Col} md="4" >
-                        <Form.Label>Land mark:</Form.Label>
-                        <Form.Control className='rounded shadow border-dark' type="text" placeholder="Land mark" onChange={handleInput} name="landmark" />
-                        <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
-                    </Form.Group>
-                </Row>
+                    <button style={{ border: "none" }} className='w-50 p-2 mt-3 bg-primary'>Submit</button>
 
-
-                <div className='text-center mt-5'>
-                    <Button type="submit" size="lg">Submit</Button>
-                </div>
-            </Form>
+                </form>
+            </div>
 
         </div>
     )

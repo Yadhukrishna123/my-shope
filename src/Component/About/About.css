@@ -1,16 +1,18 @@
-.left-session{
+.left-session {
     width: 50%;
-   /* border: 1px solid black; */
-   height: 300px;
-   
+    /* border: 1px solid black; */
+    height: 300px;
+
 }
-.right-session{
+
+.right-session {
     width: 50%;
-     /* border: 1px solid black; */
-   height: 300px;
+    /* border: 1px solid black; */
+    height: 300px;
 }
-.right-session img{
+
+.right-session img {
     height: 300px;
     width: 85%;
-   
+
 }

@@ -13,19 +13,19 @@ const Checkout = () => {
 
 
     const handleCheckout = () => {
-        if(address.addresses && address.addresses.length === 0 ){
+        if (address.addresses && address.addresses.length === 0) {
             alert("Address is required!")
-        }else{
+        } else {
             navigate("/payment")
         }
     }
 
 
     return (
-        <div style={{height:"750px"}} className='parent-parent '>
+        <div style={{ height: "750px" }} className='parent-parent '>
             <div className='checkout-parent'>
                 <div className='checkoutSession'>
-                    <h2 style={{textDecoration:"underLine"}} className='ms-5 text-secondary'>Delivery address</h2>
+                    <h2 style={{ textDecoration: "underLine" }} className='ms-5 text-secondary'>Delivery address</h2>
                     {address.addresses.map((add) => {
                         return (
                             <div className=' m-3 address-parent'>
@@ -51,7 +51,7 @@ const Checkout = () => {
                         )
                     })}
 
-                    <h2 style={{textDecoration:"underLine"}} className='ms-5 mt-5 text-secondary'>Your product</h2>
+                    <h2 style={{ textDecoration: "underLine" }} className='ms-5 mt-5 text-secondary'>Your product</h2>
 
                     {
                         products.map((product) => {
@@ -73,14 +73,14 @@ const Checkout = () => {
 
 
                     <div className='text-center mt-5'>
-                      
-                            <button onClick={handleCheckout} className='continue-button ms-auto'>Continue</button>
 
-                       
+                        <button onClick={handleCheckout} className='continue-button ms-auto'>Continue</button>
+
+
                     </div>
                 </div>
                 <div className='price-session'>
-                    <h2 style={{textDecoration:"underLine"}} className='text-center mt-2 text-secondary'>Price-details</h2>
+                    <h2 style={{ textDecoration: "underLine" }} className='text-center mt-2 text-secondary'>Price-details</h2>
 
 
                     <div className='price-parent mt-4'>

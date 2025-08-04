@@ -12,10 +12,10 @@ const Payment = () => {
     const dispatch = useDispatch()
 
     const handleContinueOrder = () => {
-        dispatch(myOrder({myOrders:products}))
+        dispatch(myOrder({ myOrders: products }))
     }
     return (
-        <div style={{height:"750px"}} className='checkout-parent'>
+        <div style={{ height: "750px" }} className='checkout-parent'>
             <div className='checkoutSession'>
                 <h2 className='ms-5 text-secondary'>Payment</h2>
                 <div className=' m-3 address-parent'>

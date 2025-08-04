@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux'
 import CardProduct from '../CardProduct/CardProduct'
 
 const WishList = () => {
+    const isLoggin = useSelector((state)=>state.userAuth.isAuthentication)
     const wishList = useSelector((state)=>state.userAuth.userWishList)
     let wishListItems =wishList.length > 0 ? (
          wishList.map((product)=>{
