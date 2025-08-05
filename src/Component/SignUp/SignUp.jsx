@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Button, Form } from 'react-bootstrap'
 import { IoEyeOff } from "react-icons/io5";
 import { IoEye } from "react-icons/io5";
-import "./SignUp.css"
+import "./Signup.css"
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
 
