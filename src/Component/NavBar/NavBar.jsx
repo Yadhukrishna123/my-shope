@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react'
 import { Container, Nav, Navbar } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
-import "./navBar.css"
+import "./NavBar.css"
 import { FaShoppingCart } from "react-icons/fa";
 import { FaUserCircle } from "react-icons/fa";
 // import { StateContext } from '../../Context/Appprovider';
