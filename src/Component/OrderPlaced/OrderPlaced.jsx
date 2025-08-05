@@ -8,7 +8,7 @@ const OrderPlaced = () => {
     const dispatch = useDispatch()
     return (
         <div style={{ height: "750px" }} className="container">
-            <div class="checkmark">✔️</div>
+            <div className="checkmark">✔️</div>
             <h1>Order Placed Successfully!</h1>
             <p>Thank you for shopping with us.</p>
             <p>Your order will be delivered soon.</p>

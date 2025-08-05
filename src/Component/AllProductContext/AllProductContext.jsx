@@ -31,7 +31,7 @@ export const AllProductContext = (props) => {
         setLoading(false)
 
     }
-    console.log("products", similarProduct);
+    // console.log("products", similarProduct);
 
 
 

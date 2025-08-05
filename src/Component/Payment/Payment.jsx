@@ -20,9 +20,9 @@ const Payment = () => {
                 <h2 className='ms-5 text-secondary'>Payment</h2>
                 <div className=' m-3 address-parent'>
 
-                    {address.addresses.map((add) => {
+                    {address.addresses.map((add, index) => {
                         return (
-                            <div className=' m-3 address-parent'>
+                            <div key={index} className=' m-3 address-parent'>
 
 
                                 <div className='create-address '>

@@ -12,7 +12,7 @@ import { useSelector } from 'react-redux'
 
 const Home = () => {
     const { allProduct, closepoPup } = useContext(AllProductContexts)
-    console.log("allProductallProduct", closepoPup)
+    // console.log("allProductallProduct", closepoPup)
     const isLogedIn = useSelector((state) => state.userAuth.isAuthentication)
 
 

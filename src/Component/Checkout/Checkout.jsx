@@ -6,7 +6,7 @@ import { Link, useNavigate } from 'react-router-dom'
 const Checkout = () => {
     const address = useSelector((state) => state.userAuth.user)
     const products = useSelector((state) => state.userAuth.userCartItems)
-    console.log(products);
+    // console.log(products);
     let totalAmount = products.reduce((acc, price) => acc + price.price, 0)
     const totalItemOfCart = products.length
     const navigate = useNavigate()
@@ -26,9 +26,9 @@ const Checkout = () => {
             <div className='checkout-parent'>
                 <div className='checkoutSession'>
                     <h2 style={{ textDecoration: "underLine" }} className='ms-5 text-secondary'>Delivery address</h2>
-                    {address.addresses.map((add) => {
+                    {address.addresses.map((add, index) => {
                         return (
-                            <div className=' m-3 address-parent'>
+                            <div key={index} className=' m-3 address-parent'>
 
 
                                 <div className='create-address '>
@@ -54,9 +54,9 @@ const Checkout = () => {
                     <h2 style={{ textDecoration: "underLine" }} className='ms-5 mt-5 text-secondary'>Your product</h2>
 
                     {
-                        products.map((product) => {
+                        products.map((product, index) => {
                             return (
-                                <div className='checkout-parent mt-5'>
+                                <div key={index} className='checkout-parent mt-5'>
                                     <div className='checkout-image'>
                                         <img src={product.thumbnail} alt="" />
                                     </div>

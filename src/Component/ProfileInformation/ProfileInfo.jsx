@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux'
 const ProfileInfo = () => {
 
     const user = useSelector((state) => state.userAuth.user)
-    console.log(user)
+    // console.log(user)
 
     return (
         <div className='m-auto'>

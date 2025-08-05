@@ -14,7 +14,7 @@ import CardProduct from '../CardProduct/CardProduct'
 const Mycart = () => {
  
     const userCartProduct = useSelector((state) => state.userAuth.userCartItems)
-    console.log("userCartProduct", userCartProduct)
+    // /console.log("userCartProduct", userCartProduct)
     const dispatch = useDispatch()
     const navigate = useNavigate()
 
@@ -28,9 +28,9 @@ const Mycart = () => {
     
 
     let cartProduct = userCartProduct.length > 0 ? (
-        userCartProduct.map((item) => {
+        userCartProduct.map((item, index) => {
             return (
-                <div className='d-flex sub-1'>
+                <div key={index} className='d-flex sub-1'>
                     <div className='sub-1-sub-1'>
                         <img src={item.thumbnail} alt="" />
                     </div >
@@ -54,7 +54,7 @@ const Mycart = () => {
 
 
     let totalAmount = userCartProduct.reduce((acc, price) => acc + price.price, 0)
-    console.log(totalAmount)
+    // console.log(totalAmount)
 
     return (
         <div style={{height:"750px"}} className='all-parent'>

@@ -19,7 +19,7 @@ import WishList from '../MyWishList/WishList';
 const UserPage = () => {
 
     const user = useSelector((state) => state.userAuth.user)
-    console.log(user.addresses)
+    // console.log(user.addresses)
 
     const dispatch = useDispatch()
     const navigate = useNavigate()

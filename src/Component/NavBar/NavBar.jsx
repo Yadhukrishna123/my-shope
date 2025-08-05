@@ -12,7 +12,7 @@ const NavBar = () => {
   const totalProduct = useSelector((state) => state.userAuth.userCartItems)
   const [expanded, setExpanded] = useState(false);
   const user = useSelector((state) => state.userAuth.user)
-  console.log(user)
+  // console.log(user)
 
   const handleCloseNav = () => {
     setExpanded(false)

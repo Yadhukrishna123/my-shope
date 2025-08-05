@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux'
 
 const MyOrder = () => {
   const userOrders = useSelector((state) => state.userAuth.myOrders)
-  console.log(userOrders)
+  // console.log(userOrders)
 
   return (
     <div className="my-order-container">

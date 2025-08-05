@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 
 const AddressManager = () => {
     const user = useSelector((state) => state.userAuth.user)
-    console.log(user.addresses)
+    // console.log(user.addresses)
     let userAddress = user.addresses.map((address, index) => {
         return (
             <div key={index} className='bg-light m-5 address-parent'>

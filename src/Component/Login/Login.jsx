@@ -50,7 +50,7 @@ const Login = () => {
 
                     navigate("/")
                 }
-                console.log(res)
+                // console.log(res)
             } else if (res.data.success === true) {
                 alert(res.data.message)
 

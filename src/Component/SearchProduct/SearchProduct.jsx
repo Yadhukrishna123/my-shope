@@ -8,7 +8,7 @@ import CardProduct from '../CardProduct/CardProduct';
 const SearchProduct = () => {
     let [search, setSearch] = useState()
     let [show, shetShow] = useState(false)
-    console.log(search)
+    // console.log(search)
     const { allProduct } = useContext(AllProductContexts)
 
     const searchProduct = search ? allProduct.filter(product =>
