@@ -1,5 +1,5 @@
 import React from 'react'
-import "./Myorder.css"
+import "./MyOrder.css"
 import { Image } from 'react-bootstrap'
 import { useSelector } from 'react-redux'
 
