@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react'
-import "../SignUp/Signup.css"
+import "./Login.css"
 import { Button, Form } from 'react-bootstrap'
 import { IoEye, IoEyeOff } from 'react-icons/io5'
 import { Link, useNavigate } from 'react-router-dom'

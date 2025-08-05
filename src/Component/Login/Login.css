@@ -1,0 +1,104 @@
+.password-session {
+    position: relative;
+}
+
+.eye-icon {
+    position: absolute;
+    margin-left: 620px;
+    margin-top: -30px;
+}
+
+.form-parent {
+    width: 50% !important;
+}
+
+.form-controll {
+    height: 20px;
+}
+
+@media only screen and (max-width: 1294px) {
+    .eye-icon {
+        margin-left: 600px;
+    }
+}
+@media only screen and (max-width: 1244px) {
+    .eye-icon {
+        margin-left: 550px;
+    }
+}
+@media only screen and (max-width: 1142px) {
+    .eye-icon {
+        margin-left: 500px;
+    }
+}
+@media only screen and (max-width: 1046px) {
+    .eye-icon {
+        margin-left: 450px;
+    }
+}
+@media only screen and (max-width: 942px) {
+    .eye-icon {
+        margin-left: 400px;
+    }
+}
+@media only screen and (max-width: 854px) {
+    .eye-icon {
+        margin-left: 350px;
+    }
+}
+@media only screen and (max-width: 854px) {
+    .form-parent {
+    width: 60% !important;
+}
+    .eye-icon {
+        margin-left: 430px;
+    }
+}
+@media only screen and (max-width: 762px) {
+    .form-parent {
+    width: 60% !important;
+}
+    .eye-icon {
+        margin-left: 380px;
+    }
+}
+@media only screen and (max-width: 674px) {
+    .form-parent {
+    width: 70% !important;
+}
+    .eye-icon {
+        margin-left: 400px;
+    }
+}
+@media only screen and (max-width: 612px) {
+    .form-parent {
+    width: 70% !important;
+}
+    .eye-icon {
+        margin-left: 350px;
+    }
+}
+@media only screen and (max-width: 532px) {
+    .form-parent {
+    width: 70% !important;
+}
+    .eye-icon {
+        margin-left: 300px;
+    }
+}
+@media only screen and (max-width: 468px) {
+    .form-parent {
+    width: 80% !important;
+}
+    .eye-icon {
+        margin-left: 280px;
+    }
+}
+@media only screen and (max-width: 380px) {
+    .form-parent {
+    width: 80% !important;
+}
+    .eye-icon {
+        margin-left: 250px;
+    }
+}
