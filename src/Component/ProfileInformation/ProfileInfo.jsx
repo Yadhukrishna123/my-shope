@@ -1,6 +1,6 @@
 import React from 'react'
 import { Form } from 'react-bootstrap'
-import "./Profileinfo.css"
+import "./ProfileInfo.css"
 import { useSelector } from 'react-redux'
 
 const ProfileInfo = () => {
