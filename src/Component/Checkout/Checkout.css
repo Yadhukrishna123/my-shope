@@ -1,4 +1,4 @@
-.checkout-parent {
+/* .checkout-parent {
     display: flex;
 }
 
@@ -12,9 +12,9 @@
     width: 30%;
     height: auto !important;
     /* border: 1px solid black; */
-}
 
-.create-address {
+
+/* .create-address {
     height: auto !important;
     border: none !important;
 }
@@ -76,22 +76,95 @@
     height: auto;
     /* border: 100px solied rgb(200, 26, 26); */
 
-}
 
-.total-Payable {
+
+/* .total-Payable {
     display: flex;
     font-weight: 700;
+} */
+
+.checkout-parent {
+    display: flex;
+    background-color: rgb(244, 248, 252);
 }
 
-/* @media only screen and (max-width: 542px) {
- .checkout-parent {
-    /* display: flex; */
-/* flex-direction: column; */
+.right-session {
+    width: 65% !important;
+    border: none;
+    height: auto !important;
+    border-right: 1px solid rgb(189, 187, 187);
+}
 
-/* .price-session{
-    width: 60% !important;
-  }
-  .checkoutSession{
-    width: 90%;
-    
-  } */
+.left-session {
+    width: 35% !important;
+    border: none;
+    height: auto !important;
+
+}
+
+.checkout-address-session {
+    width: 85% !important;
+    background-color: #fff;
+    margin-top: 20px !important;
+    border: none !important;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+
+
+}
+
+.checkout-product-details {
+    display: flex;
+    /* margin-top: 30px !important; */
+    width: 85% !important;
+    margin: auto;
+    background-color: #fff;
+    border: none !important;
+    border-bottom: 1px solid rgb(232, 228, 228) !important;
+}
+
+.checkout-product-details-img {
+    width: 50%;
+
+}
+
+.checkout-product-details-img img {
+    width: 70% !important;
+    height: 150px !important;
+}
+
+.checkout-product-details-oth-de {
+    width: 100%;
+}
+
+.btn-session {
+    display: flex !important;
+}
+
+.btn-session button {
+    padding: 10px 60px;
+    margin-left: auto !important;
+    margin-right: 80px !important;
+    margin-top: 30px !important;
+    border: none;
+    background-color: orangered;
+    color: rgb(232, 228, 228);
+    font-weight: 700;
+}
+.left-price-session{
+    width: 85% !important;
+    border:none !important;
+    display: flex;
+    flex-direction: column;
+    margin: auto !important;
+    margin-top: 100px !important;
+    background-color: #fff;
+}
+.left-price-session-head{
+    border-bottom: 1px solid rgb(219, 217, 217) !important;
+}
+.left-price-session-head-one{
+    border-bottom: 1px solid rgb(207, 204, 204);
+    height: 150px;
+}
