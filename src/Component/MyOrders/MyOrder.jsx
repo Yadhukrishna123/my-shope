@@ -8,19 +8,19 @@ const MyOrder = () => {
   // console.log(userOrders)
 
   return (
-    <div className="my-order-container">
+    <div >
       {userOrders && userOrders.length > 0 ? (
         userOrders.map((orderGroup, indexOne) =>
           orderGroup.map((ord, indexTwo) => (
             <div className="checkout-parent mt-4" key={`${indexOne}-${indexTwo}`}>
-              <div className="checkout-image">
+              <div className="order-img ">
                 <img src={ord.thumbnail} alt={ord.title} />
               </div>
-              <div className="checkout-product-details">
+              <div className="order-title">
                 <h2 className="fs-5">{ord.title}</h2>
               </div>
               <div className="checkout-price">
-                <p>₹{ord.price}</p>
+                <p className='me-5'>₹{ord.price}</p>
               </div>
             </div>
           ))

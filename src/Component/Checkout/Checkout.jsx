@@ -12,7 +12,7 @@ const Checkout = () => {
     const totalItemOfCart = products.length
     const navigate = useNavigate()
 
-
+    console.log(products)
     const handleCheckout = () => {
         if (address.addresses && address.addresses.length === 0) {
             alert("Address is required!")
@@ -55,7 +55,7 @@ const Checkout = () => {
                                         <h5>{p.title}</h5>
                                         <div className='d-flex'>
                                             <div><LiaRupeeSignSolid /><span>{p.price}</span></div>
-                                            <div className='ms-2'>{p.discountPercentage} <LuPercent color='green' />
+                                            <div className='ms-2 text-success'>{p.discountPercentage} <LuPercent color='green' />
                                                 <span className='text-success'>off</span></div>
                                             <div className='ms-auto me-5'><p>Delevery in two days</p></div>
                                         </div>

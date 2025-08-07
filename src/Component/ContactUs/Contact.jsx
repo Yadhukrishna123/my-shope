@@ -32,7 +32,7 @@ const Contact = () => {
         </div>
       </div>
 
-      <div className='d-flex'>
+      <div style={{marginTop:"50px"}} className='d-flex'>
         <div className='sub-session-2 mt-5'>
           <h5 className='text-center mt-5'>Don't be a stranger!</h5>
           <h1 className='text-center'>You tell us. We listen.​</h1>

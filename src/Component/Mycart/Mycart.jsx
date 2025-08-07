@@ -14,7 +14,7 @@ import CardProduct from '../CardProduct/CardProduct'
 const Mycart = () => {
  
     const userCartProduct = useSelector((state) => state.userAuth.userCartItems)
-    // /console.log("userCartProduct", userCartProduct)
+    console.log("userCartProduct", userCartProduct)
     const dispatch = useDispatch()
     const navigate = useNavigate()
 
