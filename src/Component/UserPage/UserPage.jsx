@@ -28,7 +28,7 @@ const UserPage = () => {
         alert("Successfully loged out")
         setTimeout(() => {
             navigate("/login")
-            location.reload();
+            // location.reload();
         }, 2000)
 
     }
@@ -74,11 +74,11 @@ const UserPage = () => {
                                 <p className='ms-5'>Manage address</p>
                             </Link>
 
-                            {user.addresses && user.addresses.length === 0 && (
-                                <Link style={{ color: "black", textDecoration: "none" }} to={`/account/${user._id}/create-address`}>
-                                    <p className='ms-5'>Create Address</p>
-                                </Link>
-                            )}
+
+                            <Link style={{ color: "black", textDecoration: "none" }} to={`/account/${user._id}/create-address`}>
+                                <p className='ms-5'>Create Address</p>
+                            </Link>
+
 
 
 

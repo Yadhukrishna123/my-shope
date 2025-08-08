@@ -108,7 +108,7 @@
     margin-top: 20px !important;
     border: none !important;
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     margin: auto;
 
 
@@ -136,6 +136,7 @@
 
 .checkout-product-details-oth-de {
     width: 100%;
+    margin-top: 50px !important;
 }
 
 .btn-session {

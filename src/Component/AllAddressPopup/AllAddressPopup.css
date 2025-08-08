@@ -1,0 +1,53 @@
+.address-popup{
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 99;
+    /* background-color: rgb(157, 156, 155); */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.address-popup-content {
+    background-color: rgb(228, 242, 254);
+    /* color: #fff; */
+    width: 800px;
+    height: 300px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    /* justify-content: center; */
+
+    transform: translateY(-100vh);
+    opacity: 0;
+    animation: slideDown 0.5s ease forwards;
+}
+.address-content{
+    height: auto;
+    border: 1px solid rgb(195, 191, 191) !important;
+    width: 90%;
+    margin: auto;
+    margin-top: 30px;
+    background-color: #fff;
+}
+.q{
+    border-bottom: 1px solid rgb(222, 219, 219);
+}
+@keyframes slideDown {
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.pop-btn{
+    padding: 3px 10px;
+    border: none;
+    background-color: rgb(252, 251, 149);
+    font-weight: 500
+}

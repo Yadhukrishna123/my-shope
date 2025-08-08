@@ -30,7 +30,7 @@ const SignUp = () => {
         e.preventDefault()
 
         try {
-            let res = await axios.post("https://my-shope-server-1.onrender.com/api/api/v1/signup", {
+            let res = await axios.post("http://localhost:8080/api/v1/signup", {
                 fullName: input.fullname,
                 email: input.email,
                 password: input.password
@@ -53,7 +53,7 @@ const SignUp = () => {
         } catch (error) {
 
 
-            alert(res.data.message)
+            alert(error.message)
 
 
         }

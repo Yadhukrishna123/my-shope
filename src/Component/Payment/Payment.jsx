@@ -1,9 +1,10 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import "./Payment.css"
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
 import { myOrder } from '../ReduxStore/userSlice'
 import { LiaRupeeSignSolid } from 'react-icons/lia'
+import { AllProductContexts } from '../AllProductContext/AllProductContext'
 
 
 const Payment = () => {
@@ -16,7 +17,9 @@ const Payment = () => {
     const dispatch = useDispatch()
     let [loading, setLoading] = useState(false)
     const navigate = useNavigate()
+    const { currentAddresss } = useContext(AllProductContexts)
 
+    console.log(currentAddresss)
 
     const handleContinueOrder = () => {
         dispatch(myOrder({ myOrders: products }))
@@ -41,15 +44,14 @@ const Payment = () => {
 
         <div className='payment-parent'>
             <div className='payment-right-session'>
-                {address.addresses.map((a, index) => {
-                    return (
-                        <div key={index} className='checkout-address-session'>
-                            <p>Deliver to <span className='fw-bold'>{a.fullName}</span></p>
-                            <p>{`${a.address},${a.city_district_town},${a.state}, ${a.landMark}`}</p>
-                            <p>{a.phone}</p>
-                        </div>
-                    )
-                })}
+                {currentAddresss && (
+                    <div className='checkout-address-session'>
+                        <p>Deliver to <span className='fw-bold'>{currentAddresss.fullName}</span></p>
+                        <p>{`${currentAddresss.address},${currentAddresss.city_district_town},${currentAddresss.state}, ${currentAddresss.landMark}`}</p>
+                        <p>{currentAddresss.phone}</p>
+                    </div>
+                )}
+
 
                 <div className='payment-opt-head'>
                     <h3>Payment options</h3>

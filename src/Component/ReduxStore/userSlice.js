@@ -24,7 +24,16 @@ export const userAuthSlice = createSlice({
             state.user = null
         },
         usersAddress: (state, action) => {
-            state.usersAddress = action.payload.address
+            if(!Array.isArray(state.usersAddress)){
+                state.usersAddress = []
+            }
+            const newAddress = action.payload.userAddress;
+             if (!newAddress) return;
+            if(Array.isArray(newAddress)){
+                state.usersAddress = [...state.usersAddress, ...newAddress]
+            }else{
+                state.usersAddress.push(newAddress)
+            }
         },
         userCart: (state, action) => {
             const isAlreadyAdd = state.userCartItems.find((item) => item.id === action.payload.userCartItem.id)

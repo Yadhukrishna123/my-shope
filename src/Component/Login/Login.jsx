@@ -27,10 +27,11 @@ const Login = () => {
         e.preventDefault()
 
         try {
-            let res = await axios.post("https://my-shope-server-1.onrender.com/api/v1/login", {
+            let res = await axios.post("http://localhost:8080/api/v1/login", {
                 email: input.email,
                 password: input.password
             }, { withCredentials: true })
+            console.log(res)
             if (res.data.success === true) {
 
                 if (res.data.isAuthenTication === true) {

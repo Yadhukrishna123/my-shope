@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import "./Checkout.css"
 import { useSelector } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
 import { LiaRupeeSignSolid } from "react-icons/lia";
 import { LuPercent } from "react-icons/lu";
+import AllAddressPopup from '../AllAddressPopup/AllAddressPopup';
 
 const Checkout = () => {
     const address = useSelector((state) => state.userAuth.user)
@@ -11,6 +12,8 @@ const Checkout = () => {
     let totalAmount = products.reduce((acc, price) => acc + price.price, 0)
     const totalItemOfCart = products.length
     const navigate = useNavigate()
+    let [popup, setPopup] = useState(false)
+    let [currentAddress, setCurrentAddress] = useState(0)
 
     console.log(products)
     const handleCheckout = () => {
@@ -23,6 +26,10 @@ const Checkout = () => {
 
 
 
+    const handleChangeAddress = () => {
+        setPopup(true)
+    }
+
 
 
 
@@ -30,19 +37,31 @@ const Checkout = () => {
 
     return (
         <div className='checkout-parent'>
+            {popup && <AllAddressPopup  setPopup={setPopup} setCurrentAddress={setCurrentAddress}/>}
+
             <div className='right-session'>
-                {address.addresses.map((a, index) => {
+                {/* {address.addresses.map((a, index) => {
                     return (
-                        <div key={index} className='checkout-address-session'>
-                            <p>Deliver to <span className='fw-bold'>{a.fullName}</span></p>
-                            <p>{`${a.address},${a.city_district_town},${a.state}, ${a.landMark}`}</p>
-                            <p>{a.phone}</p>
-                        </div>
+                       
                     )
-                })}
+                })} */}
+                {address.addresses && address.addresses.length > 0 && (
+                    <div className='checkout-address-session'>
+                        <div>
+                            <p>Deliver to <span className='fw-bold'>{address.addresses[currentAddress].fullName}</span></p>
+                            <p>{`${address.addresses[currentAddress].address},${address.addresses[currentAddress].city_district_town},${address.addresses[currentAddress].state}, ${address.addresses[currentAddress].landMark}`}</p>
+                            <p>{address.addresses[currentAddress].phone}</p>
+                        </div>
+                        <div className='ms-auto mt-5 me-4' >
+                            <button onClick={handleChangeAddress} style={{ border: "none" }}>Change</button>
+                        </div>
+
+                    </div>
+                )}
 
 
-                <div className='mt-5'>
+
+                <div className='mt-5 '>
 
                     {
                         products && products.map((p, index) => {

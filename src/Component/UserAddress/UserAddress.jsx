@@ -23,7 +23,7 @@ const UserAddress = () => {
         state: "",
         landmark: ""
     })
-
+    // console.log(input)
     const handleInput = (e) => {
         setInput({ ...input, [e.target.name]: e.target.value })
     }
@@ -32,7 +32,7 @@ const UserAddress = () => {
         e.preventDefault()
 
         try {
-            let res = await axios.post("https://my-shope-server-1.onrender.com/api/api/v1/address_create", {
+            let res = await axios.post("http://localhost:8080/api/v1/address_create", {
                 fullName: input.fullname,
                 phone: input.phone,
                 pincode: input.pincode,
@@ -44,16 +44,12 @@ const UserAddress = () => {
 
             if (res.data.success) {
 
-                if (res.data.success === true) {
-                    dispatch(usersAddress({
-                        address: input
+                dispatch(usersAddress({ userAddress: res.data.addresses }))
+                alert(res.data.message)
 
-                    }))
-                    alert(res.data.message)
-
-                    await new Promise((resolve) => setTimeout(resolve, 2000));
-                    navigate(`account/${user._id}`);
-                }
+                await new Promise((resolve) => setTimeout(resolve, 2000));
+                navigate(`account/${user._id}`);
+                // }
 
             }
 

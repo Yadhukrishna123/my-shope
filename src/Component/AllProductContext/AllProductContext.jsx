@@ -13,6 +13,7 @@ export const AllProductContext = (props) => {
     let [similarProduct, setSimilarProduct] = useState([])
     let [loggedIn, setLoggedIn] = useState(false)
     let [closepoPup, setClosePupup] = useState(false)
+    let[currentAddresss, setCurrentAddresss] = useState()
 
 
     const allMenu = async () => {
@@ -68,7 +69,9 @@ export const AllProductContext = (props) => {
             setLoggedIn,
             loggedIn,
             handleClosePopup,
-            closepoPup
+            closepoPup,
+            setCurrentAddresss,
+            currentAddresss
         }}>
             {!loading ? props.children : <Loading />}
         </AllProductContexts.Provider>
