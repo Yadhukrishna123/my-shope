@@ -4,50 +4,20 @@
 }
 
 .profile-info-parent label {
-  margin-left: 230px;
+  margin-left: 270px;
 }
 
 .profile-info-parent input {
   height: 50px;
-  border: none;
+  border: 1px solid rgb(214, 211, 211);
+}
+.profile-info-parent input:focus{
+  outline: none;
+  
 }
 
-@media only screen and (max-width:1093px) {
-  .profile-info-parent input {
-    width: 70% !important;
-  }
-
-  .profile-info-parent label {
-    margin-left: 120px;
-  }
-}
-
-@media only screen and (max-width:933px) {
-  .profile-info-parent input {
-    width: 70% !important;
-  }
-
-  .profile-info-parent label {
-    margin-left: 150px;
-  }
-}
-
-@media only screen and (max-width:781px) {
-  .profile-info-parent input {
-    width: 80% !important;
-  }
-
-  .profile-info-parent label {
-    margin-left: 100px;
-  }
-}
-
-@media only screen and (max-width:597px) {
-  .profile-info-parent input {
-    width: 80% !important;
-  }
-
-  .profile-info-parent label {
-    margin-left: 80px;
+@media only screen and (max-width: 600px) {
+  body {
+    background-color: lightblue;
   }
 }

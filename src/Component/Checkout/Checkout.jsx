@@ -10,12 +10,14 @@ const Checkout = () => {
     const address = useSelector((state) => state.userAuth.user)
     const products = useSelector((state) => state.userAuth.userCartItems)
     let totalAmount = products.reduce((acc, price) => acc + price.price, 0)
+    const userInitialAddress = useSelector((state) => state.userAuth. usersAddress)
+    const joinTowAddress = [...userInitialAddress, address.addresses]
     const totalItemOfCart = products.length
     const navigate = useNavigate()
     let [popup, setPopup] = useState(false)
     let [currentAddress, setCurrentAddress] = useState(0)
 
-    console.log(products)
+    console.log(joinTowAddress)
     const handleCheckout = () => {
         if (address.addresses && address.addresses.length === 0) {
             alert("Address is required!")
@@ -37,7 +39,7 @@ const Checkout = () => {
 
     return (
         <div className='checkout-parent'>
-            {popup && <AllAddressPopup  setPopup={setPopup} setCurrentAddress={setCurrentAddress}/>}
+            {popup && <AllAddressPopup setPopup={setPopup} setCurrentAddress={setCurrentAddress} />}
 
             <div className='right-session'>
                 {/* {address.addresses.map((a, index) => {
@@ -45,12 +47,12 @@ const Checkout = () => {
                        
                     )
                 })} */}
-                {address.addresses && address.addresses.length > 0 && (
+                {joinTowAddress && joinTowAddress.length > 0 && (
                     <div className='checkout-address-session'>
                         <div>
-                            <p>Deliver to <span className='fw-bold'>{address.addresses[currentAddress].fullName}</span></p>
-                            <p>{`${address.addresses[currentAddress].address},${address.addresses[currentAddress].city_district_town},${address.addresses[currentAddress].state}, ${address.addresses[currentAddress].landMark}`}</p>
-                            <p>{address.addresses[currentAddress].phone}</p>
+                            <p>Deliver to <span className='fw-bold'>{joinTowAddress[currentAddress].fullName}</span></p>
+                            <p>{`${joinTowAddress[currentAddress].address},${joinTowAddress[currentAddress].city_district_town},${joinTowAddress[currentAddress].state}, ${joinTowAddress[currentAddress].landMark}`}</p>
+                            <p>{joinTowAddress[currentAddress].phone}</p>
                         </div>
                         <div className='ms-auto mt-5 me-4' >
                             <button onClick={handleChangeAddress} style={{ border: "none" }}>Change</button>

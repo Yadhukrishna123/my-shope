@@ -7,7 +7,7 @@ import { AllProductContexts } from '../AllProductContext/AllProductContext'
 import axios from 'axios'
 import { useDispatch } from 'react-redux'
 import { userAuthSuccess } from '../ReduxStore/userSlice'
-
+// https://my-shope-server-1.onrender.com/
 
 const Login = () => {
     const navigate = useNavigate()
@@ -27,7 +27,7 @@ const Login = () => {
         e.preventDefault()
 
         try {
-            let res = await axios.post("https://my-shope-server-1.onrender.com/api/v1/login", {
+            let res = await axios.post("http://localhost:8080/api/v1/login", {
                 email: input.email,
                 password: input.password
             }, { withCredentials: true })

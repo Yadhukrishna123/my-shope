@@ -33,104 +33,114 @@ const UserPage = () => {
 
     }
     return (
-        <div className='d-flex user-page-parent'>
+        <div className='user-page-parent'>
             <div className='user-page row'>
                 <div className='d-flex user-bio justify-content-center align-items-center mt-3 '>
                     <div className='d-flex '>
                         <FaUserCircle size={50} />
                     </div>
-                    <div className='ms-5'>
+                    <div className='ms-3 mt-2'>
 
                         <h4>{user.fullName}</h4>
                     </div>
                 </div>
 
                 <div>
-                    <div className='d-flex orders justify-content-between align-items-center mt-3 '>
-                        <div className='ms-5'>
+                    <div className='my-order'>
+                        <div className='my-order-sub'>
                             <IoBagCheckOutline size={30} />
                         </div>
-                        <div className='mt-2'>
+                        <div className='my-order-sub'>
 
-                            <p className='fs-5 text-secondary'>My orders</p>
+                            <p className='fs-5 text-secondary mt-1'>My orders</p>
                         </div>
-                        <div className='me-5'>
+                        <div className='my-order-sub'>
                             <Link to={`/account/${user._id}/orders`}>
                                 <FaArrowRight size={25} />
                             </Link>
                         </div>
                     </div>
-                    <div className='profile-address'>
-                        <div className='d-flex '>
-                            <FaUserCircle size={30} color='blue' className='mt-1 iconss' />
+                    <div className='profile-content-parent'>
+                        <div className='profile-content'>
+                            <div className='profile-content-sub'>
+                                <div className='mt-2'>
+                                    <FaUserCircle size={30} color='blue' className='mt-2 iconss' />
+                                </div>
 
-                            <p className='ms-2 fs-5 text-secondary'>Account setting</p>
+                                <div>
+                                    <p className='ms-3 mt-3 fs-5 text-secondary'>Account setting</p>
+                                </div>
+                            </div>
+                            <div className='profile-content-sub-1'>
+                                <Link style={{ color: "black", textDecoration: "none" }} to={`/account/${user._id}/profile`}>
+                                    <p className='ms-5'>Profile information</p>
+                                </Link>
+                                <Link style={{ color: "black", textDecoration: "none" }} to={`/account/${user._id}/address_manager`}>
+                                    <p className='ms-5'>Manage address</p>
+                                </Link>
+
+
+                                <Link style={{ color: "black", textDecoration: "none" }} to={`/account/${user._id}/create-address`}>
+                                    <p className='ms-5'>Create Address</p>
+                                </Link>
+
+
+
+
+                            </div>
                         </div>
-                        <div className='mt-2'>
-                            <Link style={{ color: "black", textDecoration: "none" }} to={`/account/${user._id}/profile`}>
-                                <p className='ms-5'>Profile information</p>
-                            </Link>
-                            <Link style={{ color: "black", textDecoration: "none" }} to={`/account/${user._id}/address_manager`}>
-                                <p className='ms-5'>Manage address</p>
-                            </Link>
 
 
-                            <Link style={{ color: "black", textDecoration: "none" }} to={`/account/${user._id}/create-address`}>
-                                <p className='ms-5'>Create Address</p>
-                            </Link>
+                        <div className='profile-content'>
+                            <div className='profile-content-sub '>
+                                <MdOutlinePayment size={30} color='blue' className='mt-3 iconss' />
 
+                                <p className='ms-2 fs-5 text-secondary'>payment</p>
+                            </div>
 
-
+                            <div className='profile-content-sub-1'>
+                                <p className='ms-5'>Gift cart</p>
+                                <p className='ms-5'>Saved upi</p>
+                                <p className='ms-5'>Saved cards</p>
+                            </div>
 
                         </div>
+
+                        <div className='profile-content'>
+                            <div className='profile-content-sub'>
+                                <FaHospitalUser size={30} color='blue' className='mt-2 iconss' />
+
+                                <p className='ms-2 fs-5 text-secondary'>My stuff</p>
+                            </div>
+
+                            <div className="profile-content-sub-1">
+                                <p className='ms-5'>My coupons</p>
+                                <p className='ms-5'>My Notifications</p>
+                                <Link style={{ color: "black", textDecoration: "none" }} to={`/account/${user._id}/wish_list`}>
+                                    <p className='ms-5'>My wish list</p>
+                                </Link>
+
+                            </div>
+
+                        </div>
+
+
                     </div>
-
-                    <div className='payment'>
-                        <div className='d-flex '>
-                            <MdOutlinePayment size={30} color='blue' className='mt-1 iconss' />
-
-                            <p className='ms-2 fs-5 text-secondary'>payment</p>
-                        </div>
-
-                        <div >
-                            <p className='ms-5'>Gift cart</p>
-                            <p className='ms-5'>Saved upi</p>
-                            <p className='ms-5'>Saved cards</p>
-                        </div>
-
-                    </div>
-
-                    <div className='payment'>
-                        <div className='d-flex '>
-                            <FaHospitalUser size={30} color='blue' className='mt-1 iconss' />
-
-                            <p className='ms-2 fs-5 text-secondary'>My stuff</p>
-                        </div>
-
-                        <div >
-                            <p className='ms-5'>My coupons</p>
-                            <p className='ms-5'>My Notifications</p>
-                            <Link style={{ color: "black", textDecoration: "none" }} to={`/account/${user._id}/wish_list`}>
-                                <p className='ms-5'>My wish list</p>
-                            </Link>
+                     <div style={{flexDirection:"row"}} className='profile-content-logout'>
+                        <div className='profile-content-sub'>
+                            <FaPowerOff style={{ cursor: "pointer" }} size={30} color='red' />
 
                         </div>
 
-                    </div>
+                        <div className='profile-content-sub-1'>
+                            <p style={{ cursor: "pointer", color:"red" }} onClick={handleLoggout}>Logout</p>
 
-                    <div className='payment'>
-                        <div className='d-flex '>
-                            <FaPowerOff style={{ cursor: "pointer" }} size={30} color='blue' className='mt-5 iconss' />
-
-                            <p style={{ cursor: "pointer" }} className='ms-2 fs-5  mt-5 ms-5 logout' onClick={handleLoggout}>Logout</p>
                         </div>
-
-
 
                     </div>
                 </div>
             </div>
-            <div className='address-page'>
+            <div className='addressd-page'>
 
                 <Routes>
                     <Route path="orders" element={<MyOrder />} />

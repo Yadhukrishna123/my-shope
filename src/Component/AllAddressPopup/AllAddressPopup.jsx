@@ -6,6 +6,9 @@ import { AllProductContexts } from '../AllProductContext/AllProductContext'
 const AllAddressPopup = ({ setPopup, setCurrentAddress }) => {
     const { setCurrentAddresss } = useContext(AllProductContexts)
     const address = useSelector((state) => state.userAuth.user)
+    const userAdddress = useSelector((state) => state.userAuth.usersAddress)
+
+    const addressList = (userAdddress && userAdddress.length > 0 ? userAdddress : (user.addresses) || [])
 
     console.log(address.addresses);
 
@@ -25,7 +28,7 @@ const AllAddressPopup = ({ setPopup, setCurrentAddress }) => {
                 <div className='address-content'>
 
 
-                    {address.addresses.map((a, index) => {
+                    {addressList.map((a, index) => {
                         return (
                             <div className='q'>
 

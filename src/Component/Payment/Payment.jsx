@@ -13,13 +13,13 @@ const Payment = () => {
     let totalAmount = products.reduce((acc, price) => acc + price.price, 0)
     const totalItemOfCart = products.length
     const [selectedPayment, setSelectedPayment] = useState()
-    const [isClickedOption, setIsClickedOptio] = useState(false)
+    // const [isClickedOption, setIsClickedOptio] = useState(false)
     const dispatch = useDispatch()
     let [loading, setLoading] = useState(false)
     const navigate = useNavigate()
     const { currentAddresss } = useContext(AllProductContexts)
 
-    console.log(currentAddresss)
+
 
     const handleContinueOrder = () => {
         dispatch(myOrder({ myOrders: products }))
@@ -45,7 +45,7 @@ const Payment = () => {
         <div className='payment-parent'>
             <div className='payment-right-session'>
                 {currentAddresss && (
-                    <div className='checkout-address-session'>
+                    <div className='payment-address-session'>
                         <p>Deliver to <span className='fw-bold'>{currentAddresss.fullName}</span></p>
                         <p>{`${currentAddresss.address},${currentAddresss.city_district_town},${currentAddresss.state}, ${currentAddresss.landMark}`}</p>
                         <p>{currentAddresss.phone}</p>

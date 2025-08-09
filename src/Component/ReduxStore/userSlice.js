@@ -24,15 +24,18 @@ export const userAuthSlice = createSlice({
             state.user = null
         },
         usersAddress: (state, action) => {
-            if(!Array.isArray(state.usersAddress)){
-                state.usersAddress = []
-            }
             const newAddress = action.payload.userAddress;
-             if (!newAddress) return;
-            if(Array.isArray(newAddress)){
-                state.usersAddress = [...state.usersAddress, ...newAddress]
-            }else{
-                state.usersAddress.push(newAddress)
+            if (!newAddress) return;
+
+            if (Array.isArray(newAddress)) {
+                // Replace the array completely with fresh data
+                state.usersAddress = newAddress;
+            } else {
+                // If a single address object is sent, append it safely
+                if (!Array.isArray(state.usersAddress)) {
+                    state.usersAddress = [];
+                }
+                state.usersAddress.push(newAddress);
             }
         },
         userCart: (state, action) => {
