@@ -63,3 +63,21 @@
     color: #fff;
     border: none;
 }
+
+@media only screen and (max-width: 730px) {
+    .payment-parent {
+        flex-direction: column;
+    }
+    .payment-right-session {
+        width: 100% !important;
+    }
+    .payment-left-session {
+        width: 100% !important;
+    }
+    .safe-text h5{
+        display: none !important;
+    }
+    .payment-btn button{
+        margin-top: 40px;
+    }
+}

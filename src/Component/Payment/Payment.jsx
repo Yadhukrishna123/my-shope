@@ -123,7 +123,7 @@ const Payment = () => {
 
                 </div>
 
-                <div className='d-flex  mt-5'>
+                <div className='d-flex  mt-5 safe-text'>
                     <h5 className='text-secondary w-75 ms-auto me-3'>Safe and Secure Payments.Easy returns.100% Authentic products.</h5>
                 </div>
 

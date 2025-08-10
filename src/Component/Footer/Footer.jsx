@@ -10,7 +10,7 @@ const Footer = () => {
   }
 
   return (
-    <div>
+    <div className='footer-p-parent'>
       <div className='d-flex mt-5 footer-parent'>
         <div className="subSession">
           <h2 className='text-center'>Quick Links</h2>

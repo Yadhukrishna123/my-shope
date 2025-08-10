@@ -29,13 +29,9 @@ const ProductDetails = () => {
             alert("Please loge in !")
         }
        
-        // alert("Item moved to cart")
+       
     }
-    // const { dispatch } = useContext(DispatchContext)
-
-    // let similarProd = productDetails.filter((item)=>item.category ===allProduct.category)
-
-    // console.log(similarProd)
+   
 
 
     return (
@@ -54,8 +50,10 @@ const ProductDetails = () => {
                         <p className='ms-5 mt-1'><FaStar color='green' className='mb-1' />{productDetails.rating}</p>
                         <p className='ms-5 mt-1  text-secondary'>{productDetails.tags ? productDetails.tags.join(" , ") : null}</p>
                     </div>
-                    <p className='w-75'>{productDetails.description}</p>
-                    <div className='d-flex mb-2'>
+                   <div className='description'>
+                     <p className='w-75'>{productDetails.description}</p>
+                   </div>
+                    <div className='d-flex mb-2 otherDetails'>
                         <div className='d-flex '>
                             <p>{productDetails.brand}</p>
                             <p className='ms-3'>{productDetails.category}</p>

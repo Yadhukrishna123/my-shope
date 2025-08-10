@@ -11,7 +11,7 @@ const Checkout = () => {
     const products = useSelector((state) => state.userAuth.userCartItems)
     let totalAmount = products.reduce((acc, price) => acc + price.price, 0)
     const userInitialAddress = useSelector((state) => state.userAuth. usersAddress)
-    const joinTowAddress = [...userInitialAddress, address.addresses]
+    const joinTowAddress = [...(userInitialAddress || []), ...(address.addresses || [])]
     const totalItemOfCart = products.length
     const navigate = useNavigate()
     let [popup, setPopup] = useState(false)

@@ -129,7 +129,7 @@
 
     .product-details-sub {
         width: 100% !important;
-        height: auto
+        height: 200px
     }
 
     .product-details-sub-1 {
@@ -140,6 +140,20 @@
     .back-addCart-btn button {
         padding: 10px 55px;
         margin-left: 40px;
+
+    }
+
+    .description {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .otherDetails {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        margin-left: 6px;
     }
 
 }
@@ -149,6 +163,7 @@
         padding: 10px 30px;
         margin-left: 40px;
     }
+
     /* .price-secssion h3 {
         font-size: 50px !important;
     } */
