@@ -1,6 +1,6 @@
 import "./AddressManager.css"
 import { useSelector } from 'react-redux';
-
+``
 const AddressManager = () => {
     const user = useSelector((state) => state.userAuth.user)
     const userAdddress = useSelector((state) =>state.userAuth.usersAddress )
